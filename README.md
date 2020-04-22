@@ -36,20 +36,20 @@ Follow these steps for completing your project.
 ## Minimum Viable Product
 
 - [X] Render a list of team members from state
-- [ ] Build a form to add a new member to the list of members
+- [X] Build a form to add a new member to the list of members
 
 ### STEP 1 - Setup your state
 
-- [ ] Import the `useState` hook and set up a state property for your team members list
+- [X] Import the `useState` hook and set up a state property for your team members list
 
-- [ ] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
+- [X] Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
 
-- [ ] Render your list of team members
+- [X] Render your list of team members
 
 ### STEP 2 - Build your form
 
-- [ ] In `Form.js` build out your markup
-- [ ] Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination)
+- [X] In `Form.js` build out your markup
+- [X] Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination)
 - [ ] Import the useState hook and utilize what we learned about two-way data binding
 - [ ] Render your `Form` component in `App` and pass a setter method (the `set_____` method from your team members state in `App`) down to it so you can add team members to your state.
 

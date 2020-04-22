@@ -1,67 +1,48 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Form = props => {
-  console.log("props", props);
-  const [team, setTeam] = useState({
-    name: "",
-    email: "",
-    job: ""
-  });
-
-  const handleChanges = e => {
-    console.log(team);
-    // console.log("the name", e.target.name)
-    // console.log("the event target", e.target)
-    //we are dynamically setting our keys.
-    // setNote({ ...note, title: e.target.value });
-    // setNote({ ...note, note: e.target.value });
-    //  const nameObj={...note}
-    //  nameObj[e.target.name]= e.target.value
-    // setNote(nameObj)
-    setTeam({
-      ...team,
-      [e.target.name]: e.target.value
+    const [member, setMember] = useState({
+        name: '',
+        email: '',
+        role: ''
     });
-  };
 
-  const submitForm = e => {
-    e.preventDefault();
-    props.addNewTeam(team);
-    setTeam({ name: "", email: "", job: ""});
-  };
+    const handleChanges = e => {
+        setMember({...member, [e.target.name]: e.target.value});
+    };
 
-  return (
+    const submitForm = e => {
+        e.preventDefault();
+        props.addNewMember(member);
+        setMember({name: '', email: '', role: ''});  
+    };
+
+return (
     <form onSubmit={submitForm}>
-      <label htmlFor="name">Name: </label>
-      <input
-        id="name"
-        type="text"
-        name="name"
-        onChange={handleChanges}
-        placeholder="Name..."
-        value={team.name}
-      />
-      <label htmlFor="email">Email: </label>
-      <input
-        id="email"
-        type="text"
-        name="email"
-        onChange={handleChanges}
-        placeholder="Email"
-        value={team.email}
-      />
-      <label htmlFor="job">Job: </label>
-      <input
-        id="job"
-        type="text"
-        name="job"
-        onChange={handleChanges}
-        placeholder="Job"
-        value={team.job}
-      />
-      <button type="submit">Add Member</button>
+    <div>
+        <label htmlFor='name'>Full Name</label>
+        <input id='name' type='text' name='name' placeholder='Full Name' onChange={handleChanges} value={member.name} />
+    </div>
+
+    <div>
+        <label htmlFor='email'>Email</label>
+        <input id='email' type='email' name='email' placeholder='email address' onChange={handleChanges} value={member.email} />
+    </div>
+
+    <div>
+        <label htmlFor='select'>Role</label>
+         <select id='role' name='role' placeholder='select role' onChange = {handleChanges} value={member.role}>
+                <option/>
+                <option>UI Designer</option>
+                <option>Frontend Engineer</option>
+                <option>Backend Engineer</option>
+                <option>Data Scientist</option>
+            </select>
+    </div>
+
+        <button type='submit'>Add Member</button>
     </form>
-  );
+)
 };
 
 export default Form; 
