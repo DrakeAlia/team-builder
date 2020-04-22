@@ -1,56 +1,35 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Form from './Form';
-import Team from './Team';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+import Form from "./components/Form.js";
+import Team from "./components/FormContainer.js";
 
 function App() {
-  const [teamMember, setTeamMember] = useState([{
-    id: 0,
-    name: 'Kylo Ren',
-    email: 'kyren@firstorder.com',
-    role: 'Intern',
+  const [team, setTeam] = useState([
+    {
+      name: "",
+      email: "",
+      job: ""
+    }
+  ]);
 
-    id: 1,
-    name: 'Leon Kennedy',
-    email: 'leonsken@raccooncity.com',
-    role: 'Cop',
-
-    id: 2,
-    name: 'Geralt of Rivia',
-    email: 'grivia@whitewolf.com',
-    role: 'Monster Slayer',
-
-    id: 3,
-    name: 'Paul Atreides',
-    email: 'paulatr@dune.com',
-    role: 'Part-time Messiah',
-
-    id: 4,
-    name: 'Link',
-    email: 'mrfairy@hyrule.com',
-    role: 'Full-time Hero',
-
-  }]);
-
-    const addTeamMember = teammate => {
-      const newTeammate = {
-        id: Number.now(),
-        name: teammate.name,
-        email: teammate.email,
-        role: teammate.role,
-      };
-      setTeamMember ([...teammate, newTeammate]);
+  const addNewTeam = param => {
+    const newTeam = {
+      id: Date.now(),
+      name: param.name,
+      email: param.email,
+      job: param.job
     };
-
+    setTeam([...team, newTeam]);
+  };
 
   return (
-    <div className="App">
-    <h1>My Team</h1>
-    <Form addTeamMember={addTeamMember} />
-    <Team teammate={teammate} />
-  </div>
+    <div>
+      <h1>My Notes</h1>
+      {/* we are going to pass a function down as a prop */}
+      <Form addNewTeam={addNewTeam} />
+      <Team team={team} />
+    </div>
   );
 }
-
-export default App;
+export default App; 
