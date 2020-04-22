@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Import the `useState` hook and set up a state property for your team members list
 import TeamMembers from "./components/TeamMembers";
-
 import Form from "./components/Form";
 
+// Render a list of team members from state
 function App() {
   const [members, setMembers] = useState([
     {
@@ -26,7 +27,7 @@ function App() {
     setMembers([...members, newMember])
   }
 
-
+  // Build a form to add a new member to the list of members
   return (
     <div className="App">
       <header className="App-header">

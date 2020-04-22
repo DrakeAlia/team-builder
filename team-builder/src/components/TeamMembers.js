@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-
+// Render your list of team members
 const TeamMembers = props => {
 
     return (

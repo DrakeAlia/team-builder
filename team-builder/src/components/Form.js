@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// In `Form.js` build out your markup
 const Form = props => {
     const [member, setMember] = useState({
         name: '',
@@ -10,13 +11,14 @@ const Form = props => {
     const handleChanges = e => {
         setMember({...member, [e.target.name]: e.target.value});
     };
-
+// Give the state variable you just declared a default value. You will need to keep track of a list of team members and each team member will have several key/value pairs associated with them.
     const submitForm = e => {
         e.preventDefault();
         props.addNewMember(member);
         setMember({name: '', email: '', role: ''});  
     };
-
+    
+// Build inputs for `name`, `email` and `role` (backend engineer, frontend engineer, designer, etc. Use your imagination)
 return (
     <form onSubmit={submitForm}>
     <div>
