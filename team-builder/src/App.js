@@ -5,7 +5,7 @@ import Form from './Form';
 import Team from './Team';
 
 function App() {
-  const [teamMember, setTeamMember ] = useState([{
+  const [teamMember, setTeamMember] = useState([{
     id: 0,
     name: 'Kylo Ren',
     email: 'kyren@firstorder.com',
@@ -47,8 +47,8 @@ function App() {
   return (
     <div className="App">
     <h1>My Team</h1>
-    <Form addTeamMember={addTeamMember}/>
-    <Team teammate={teammate}/>
+    <Form addTeamMember={addTeamMember} />
+    <Team teammate={teammate} />
   </div>
   );
 }
